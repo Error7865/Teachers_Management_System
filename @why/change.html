@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url(css/index.css);
+  </style>
+  <title>Admin</title>
+</head>
+<?php
+  session_start();
+  if(array_key_exists("fu",$_SESSION)){
+  echo '<script>
+    alert("Not matched. Please try again.")
+  </script>';
+  }
+  
+  session_destroy();
+?>
+
+<body>
+  <div class="main">
+    <!--p class="sign" align="center">Welcome !</p-->
+    <form class="form1" method="post" action="set.php">
+      <input class="un " type="text" align="center" placeholder="New password" name="n_pass">
+      <input class="pass" type="text" align="center" placeholder="Confirm password" name="c_pass">
+      <input type="submit" class="submit" align="center" value="Done" name="done">
+            
+       </form>         
+    </div>
+     
+</body>
+
+</html>

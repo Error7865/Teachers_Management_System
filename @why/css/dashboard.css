@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: linear-gradient(to right, #c02942, #91041c);
+    width: auto;
+    height: 4em;
+    margin-top: -1em;
+    padding-top: 1em;
+
+}
+ul>li{
+    list-style-type: none;
+}
+a{
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    left: 95%;
+}
+#main{
+    display: inline-block;
+}
+#con{
+    margin-left: 100px;
+    margin-top: 2em;
+    width: 400px;
+    height: 400px;
+}
+#un{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    color: #fff;
+        --s: 50px;
+        --c: #191b22;
+        --_s: calc(2*var(--s)) calc(2*var(--s));
+        --_g: 35.36% 35.36% at;
+        --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+        background: 
+          radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+          radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+          radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+          radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+          repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+          radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+        background-attachment: fixed;
+      
+
+}
+#up{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    /*border: 2px groove orangered;*/
+    background-color: transparent;
+    position: absolute;
+    bottom: 297px;
+    left: 100px;
+    z-index: 10;
+}
+
+#r_con{
+    
+    position: relative;
+    left: 150%;
+    bottom: 23em;
+    color: #91041c;
+    display: flex;
+}
+
+#add{
+    position: relative;
+    top: 1em;
+}
+#var{
+    color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -0.5em;
+    left: 5.3em;
+}
+
+#update{
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+     border-radius: 5px;
+    position: relative;
+    top: 1.4em;
+    left: 62px;
+}
+#update:hover{
+    background-color: #fff;
+}
+
+footer{
+    width: auto;
+    height: 10em;
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+    background: 
+      radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+      radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+      radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+      radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+      repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+      radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+}
+
+h3>a{
+    color: #fff;
+    margin-left: -50%;
+}
+
+span{
+    font-weight: bolder;
+    font-size: 3em;
+}
+ol>li{
+    color: #191b22;
+}
+#list
+{
+    position: relative;
+    top: 4em;
+    right: 8em;
+
+}

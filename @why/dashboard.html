@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+</head>
+<?php
+include "pass.php";
+
+
+
+$co=counts($ho_na, $user, $pass);
+
+session_start();
+if(array_key_exists("0",$_SESSION)){
+    echo '<script>
+        alert("Already exits.")
+      </script>';
+}
+session_destroy();
+
+function counts($ho_na, $user, $pass)
+{
+$db="trms";
+$con=new mysqli($ho_na, $user, $pass, $db);
+if($con->connect_error) die("Connecting error".$con->connect_error);
+$que="SELECT * FROM tblteacher";
+$re=$con->query($que);
+
+
+$count=0;
+while (1) {
+    $res=$re->fetch_array(MYSQLI_ASSOC);
+    if (is_null($res)) {
+        //echo "Quiting";
+        break;
+    }
+    else{
+        //echo "Still alive";
+        $count+=1;
+    }
+}
+
+$con->close();
+return $count;
+
+}
+
+function shows($ho_na, $user, $pass)
+{
+$db="trms";
+$con=new mysqli($ho_na, $user, $pass, $db);
+if($con->connect_error) die("Connecting error".$con->connect_error);
+$que="SELECT * FROM tblsubjects";
+$re=$con->query($que);
+echo '<ol>';
+while (1)
+{
+    $res=$re->fetch_array(MYSQLI_ASSOC);
+    if (is_null($res)) {
+        break;
+    }
+    else {
+     echo "<li>$res[Subject]</li>";  
+    }
+}
+echo '</ol>';
+//print_r($res);
+
+$con->close();
+
+
+}
+
+?>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Log out</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="main">
+            <div id="con">
+               <div id="un">
+                <br>
+                <h2 align="center">Total number of Teachers <br><br><br><span><?php echo $co;?></span></h2>
+                
+               </div>
+            <!--a href="index.html" id="up"-->
+            <form action="teachers.php" method="post">
+            <input type="submit" value="" id="up" name="list">
+            </form>
+
+            </div>
+            <div id="r_con">
+                <h2 align="left">Subject list &colon;</h2>
+                <div id="add">
+                    <p id="var">Add</p>
+            </div>
+            <form action="update.php" method="post">
+            <input type="submit" value="" id="update" name="add">
+            </form>
+            <br>
+            <br><br>
+            <div id="list">
+               
+                <?php
+                shows($ho_na, $user, $pass);
+                ?>
+            </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <br>
+        <h3><a href="../about.html">About</a></h3>
+    </footer>
+</body>
+</html>
